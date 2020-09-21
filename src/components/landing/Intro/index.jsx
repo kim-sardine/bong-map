@@ -15,14 +15,14 @@ export const Intro = () => {
       <IntroWrapper as={Container}>
         <Details theme={theme}>
           <h1>Hi There!</h1>
-          <h4>I’m John and I’m a JAMStack engineer!</h4>
-          <Button as={AnchorLink} href="#contact">
-            Hire me
-          </Button>
         </Details>
-        <Thumbnail>
-          <img src={dev} alt="I’m John and I’m a JAMStack engineer!" />
-        </Thumbnail>
+        <iframe
+          title="bongmap"
+          src="https://www.google.com/maps/d/u/2/embed?mid=11kYLp9pIoh-RV3Rj8sIyrT_vmZmqmim-"
+          width="100%"
+          height="500px"
+          style={{ border: 'none' }}
+        ></iframe>
       </IntroWrapper>
     </Wrapper>
   );
