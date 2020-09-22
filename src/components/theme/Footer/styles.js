@@ -35,11 +35,6 @@ export const Links = styled.div`
     img {
       margin: 0;
     }
-
-    &:first-child,
-    &:last-child {
-      margin: 0;
-    }
   }
 `;
 
