@@ -8,9 +8,18 @@ export const Wrapper = styled.div`
 `;
 
 export const Brand = styled.a`
-  color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+  color: '#fff';
 
   @media (max-width: 960px) {
-    mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
+    mix-blend-mode: 'difference';
+  }
+`;
+
+export const Logo = styled.span`
+  vertical-align: middle;
+  margin-right: 5px;
+
+  img {
+    margin: 0;
   }
 `;

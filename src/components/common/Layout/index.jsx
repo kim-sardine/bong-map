@@ -1,17 +1,12 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'providers/ThemeProvider';
+import React from 'react';
 import { Footer } from 'components/theme';
 import { Global } from './styles';
 import './fonts.css';
 
-export const Layout = ({ children }) => {
-  const { theme } = useContext(ThemeContext);
-
-  return (
-    <>
-      <Global theme={theme} />
-      {children}
-      <Footer />
-    </>
-  );
-};
+export const Layout = ({ children }) => (
+  <>
+    <Global />
+    {children}
+    <Footer />
+  </>
+);

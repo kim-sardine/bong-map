@@ -2,17 +2,16 @@ import React, { useContext } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Container, Button } from 'components/common';
-import dev from 'assets/illustrations/skills.svg';
-import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
+import { Wrapper, ReportWrapper, Details, Thumbnail } from './styles';
 
-export const Skills = () => {
+export const Report = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
     <Wrapper id="about">
-      <SkillsWrapper as={Container}>
+      <ReportWrapper as={Container}>
         <Thumbnail>
-          <img src={dev} alt="I’m John and I’m a Backend & Devops engineer!" />
+          <img src="" alt="I’m John and I’m a Backend & Devops engineer!" />
         </Thumbnail>
         <Details theme={theme}>
           <h1>More about me</h1>
@@ -24,7 +23,7 @@ export const Skills = () => {
             Hire me
           </Button>
         </Details>
-      </SkillsWrapper>
+      </ReportWrapper>
     </Wrapper>
   );
 };

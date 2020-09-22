@@ -1,10 +1,10 @@
 module.exports = {
-  defaultTitle: 'John Doe',
+  defaultTitle: '봉맵 - 철봉, 평행봉 지도',
   logo: 'https://portfolio.smakosh.com/favicon/favicon-512.png',
-  author: 'John Doe',
   url: 'https://portfolio.smakosh.com',
-  legalName: 'John Doe',
-  defaultDescription: 'I’m John and I’m a Backend & Devops engineer!',
+  author: 'kim.sardine',
+  legalName: 'Kim Sardine',
+  defaultDescription: 'Go sardine!',
   socialLinks: {
     twitter: 'http://www.twitter.com/smakosh',
     github: 'https://github.com/smakosh',
@@ -30,5 +30,5 @@ module.exports = {
     email: 'email',
     phone: 'phone number',
   },
-  foundingDate: '2018',
+  foundingDate: '2020',
 };

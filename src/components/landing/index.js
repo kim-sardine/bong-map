@@ -1,2 +1,2 @@
-export * from './Intro';
-export * from './Skills';
+export * from './Map';
+export * from './Report';
