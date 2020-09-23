@@ -8,7 +8,7 @@ module.exports = {
   socialLinks: {
     github: 'https://github.com/kim-sardine',
   },
-  googleAnalyticsID: 'UA-88875900-4',
+  googleAnalyticsID: 'UA-131568070-6',
   themeColor: '#6b63ff',
   backgroundColor: '#6b63ff',
   contact: {
