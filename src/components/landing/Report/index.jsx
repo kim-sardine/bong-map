@@ -28,7 +28,9 @@ export const Report = () => (
 );
 
 const MyForm = () => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    bong_type: 'pullup',
+  });
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -45,7 +47,10 @@ const MyForm = () => {
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => {
+        navigate(form.getAttribute('action'));
+        alert('제보 완료! 금방 등록하겠습니다.');
+      })
       .catch(error => alert(error));
   };
 
@@ -69,7 +74,7 @@ const MyForm = () => {
           좌표
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="location" type="text" placeholder="37.47452, 127.0384" required />
+          <Form.Control name="location" type="text" placeholder="37.47452, 127.0384" required onChange={handleChange} />
         </Col>
       </Form.Group>
 
@@ -78,7 +83,13 @@ const MyForm = () => {
           상세 주소
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="address" type="text" placeholder="영동 1교 밑 스케이트장" required />
+          <Form.Control
+            name="address"
+            type="text"
+            placeholder="영동 1교 밑 스케이트장"
+            required
+            onChange={handleChange}
+          />
         </Col>
       </Form.Group>
 
@@ -88,8 +99,22 @@ const MyForm = () => {
             종류
           </Form.Label>
           <Col sm={9}>
-            <Form.Check type="radio" label="철봉" name="bong_type" value="철봉" id="bong_type_1" checked />
-            <Form.Check type="radio" label="평행봉" name="bong_type" value="평행봉" id="bong_type_2" />
+            <Form.Check
+              type="radio"
+              label="철봉"
+              name="bong_type"
+              value="pullup"
+              onChange={handleChange}
+              checked={state.bong_type === 'pullup'}
+            />
+            <Form.Check
+              type="radio"
+              label="평행봉"
+              name="bong_type"
+              value="parallel"
+              onChange={handleChange}
+              checked={state.bong_type === 'parallel'}
+            />
           </Col>
         </Form.Group>
       </Fieldset>
@@ -99,7 +124,7 @@ const MyForm = () => {
           개수, 높이
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="description" type="text" placeholder="3개 (180~200cm)" required />
+          <Form.Control name="description" type="text" placeholder="3개 (180~200cm)" required onChange={handleChange} />
         </Col>
       </Form.Group>
 
@@ -108,7 +133,7 @@ const MyForm = () => {
           닉네임(옵션)
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="nickname" type="text" placeholder="정어리" />
+          <Form.Control name="nickname" type="text" placeholder="정어리" onChange={handleChange} />
         </Col>
       </Form.Group>
 
