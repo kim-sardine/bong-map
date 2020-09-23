@@ -8,10 +8,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Brand = styled.a`
-  color: '#fff';
+  color: #000;
 
   @media (max-width: 960px) {
-    mix-blend-mode: 'difference';
+    mix-blend-mode: unset;
   }
 `;
 

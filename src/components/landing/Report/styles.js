@@ -19,13 +19,13 @@ export const ReportWrapper = styled.div`
   }
 `;
 
-export const Column = styled.div`
+export const ReportColumn = styled.div`
   flex: 1;
   padding: 0 1rem;
 
-  @media (max-width: 960px) {
-    width: 100%;
-  }
+  border: 2px solid #6c757d;
+  border-radius: 10px;
+  padding: 2rem;
 `;
 
 export const Fieldset = styled.fieldset`

@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { Wrapper, ReportWrapper, Column, Fieldset } from './styles';
+import { Wrapper, ReportWrapper, ReportColumn, Fieldset } from './styles';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function encode(data) {
@@ -17,16 +17,12 @@ function encode(data) {
 export const Report = () => (
   <Wrapper id="report">
     <ReportWrapper as={Container}>
-      <Column>
+      <ReportColumn>
+        <div style={{ textAlign: 'center' }}>
+          <h3>제보하기</h3>
+        </div>
         <MyForm />
-      </Column>
-      <Column>
-        <h1>More about me</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s
-          standard dummy.
-        </p>
-      </Column>
+      </ReportColumn>
     </ReportWrapper>
   </Wrapper>
 );
@@ -61,6 +57,7 @@ const MyForm = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      style={{ marginBottom: 0 }}
     >
       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
       <input type="hidden" name="form-name" value="report" />
@@ -72,7 +69,7 @@ const MyForm = () => {
           좌표
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="location" type="text" placeholder="37.47452, 127.0384" />
+          <Form.Control name="location" type="text" placeholder="37.47452, 127.0384" required />
         </Col>
       </Form.Group>
 
@@ -81,7 +78,7 @@ const MyForm = () => {
           상세 주소
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="address" type="text" placeholder="영동 1교 밑 스케이트장" />
+          <Form.Control name="address" type="text" placeholder="영동 1교 밑 스케이트장" required />
         </Col>
       </Form.Group>
 
@@ -102,13 +99,22 @@ const MyForm = () => {
           개수, 높이
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="description" type="text" placeholder="3개 (180~200cm)" />
+          <Form.Control name="description" type="text" placeholder="3개 (180~200cm)" required />
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row}>
+      <Form.Group as={Row} controlId="formNickname">
+        <Form.Label column sm={3}>
+          닉네임(옵션)
+        </Form.Label>
+        <Col sm={9}>
+          <Form.Control name="nickname" type="text" placeholder="정어리" />
+        </Col>
+      </Form.Group>
+
+      <Form.Group as={Row} style={{ marginBottom: 0 }}>
         <Col sm={{ span: 10, offset: 2 }} style={{ textAlign: 'right' }}>
-          <Button type="submit">제보하기</Button>
+          <Button type="submit">제보</Button>
         </Col>
       </Form.Group>
     </Form>
