@@ -1,10 +1,10 @@
 module.exports = {
-  defaultTitle: '봉맵 - 철봉, 평행봉 지도',
+  defaultTitle: '봉맵 - 다 함께 만드는 철봉, 평행봉 지도',
   logo: 'https://bongmap.sidepun.ch/favicon/favicon-512.png',
   url: 'https://bongmap.sidepun.ch',
   author: 'kim.sardine',
   legalName: 'Kim Sardine',
-  defaultDescription: '내 주변 철봉, 평행봉 찾기',
+  defaultDescription: '다 함께 만드는 철봉, 평행봉 지도',
   socialLinks: {
     github: 'https://github.com/kim-sardine',
   },

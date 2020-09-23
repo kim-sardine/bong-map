@@ -19,47 +19,16 @@ export const ReportWrapper = styled.div`
   }
 `;
 
-export const Details = styled.div`
+export const Column = styled.div`
   flex: 1;
-  padding-left: 2rem;
+  padding: 0 1rem;
 
   @media (max-width: 960px) {
-    padding-left: unset;
     width: 100%;
-  }
-
-  h1 {
-    margin-bottom: 2rem;
-    font-size: 26pt;
-    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#212121')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
-  }
-
-  p {
-    margin-bottom: 2.5rem;
-    font-size: 20pt;
-    font-weight: normal;
-    line-height: 1.3;
-    color: ${({ theme }) => (theme === 'dark' ? '#c7c7c7' : '#707070')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
   }
 `;
 
-export const Thumbnail = styled.div`
-  flex: 1;
-
-  @media (max-width: 960px) {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  img {
-    width: 100%;
-  }
+export const Fieldset = styled.fieldset`
+  border: none;
+  margin-bottom: 0;
 `;

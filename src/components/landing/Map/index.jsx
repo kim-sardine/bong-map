@@ -7,7 +7,7 @@ export const Map = () => (
   <Wrapper>
     <Header />
     <MapWrapper as={Container} style={{ flexDirection: 'column' }}>
-      <h2>철봉, 평행봉 위치 & 정보</h2>
+      <h2>다 함께 만드는 철봉, 평행봉 지도</h2>
     </MapWrapper>
     <MapWrapper as={Container} id="map">
       <iframe
