@@ -13,10 +13,6 @@ export const ReportWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
 `;
 
 export const ReportColumn = styled.div`
