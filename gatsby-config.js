@@ -8,8 +8,6 @@ module.exports = {
     siteUrl: config.url,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -17,6 +15,8 @@ module.exports = {
         head: true,
       },
     },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-favicon',
       options: {

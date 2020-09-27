@@ -41,6 +41,11 @@ const MyForm = () => {
     e.preventDefault();
     const form = e.target;
 
+    trackCustomEvent({
+      category: 'User',
+      action: 'Submit Report',
+    });
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -50,10 +55,6 @@ const MyForm = () => {
       }),
     })
       .then(() => {
-        trackCustomEvent({
-          category: 'Report',
-          action: 'Submit',
-        });
         navigate(form.getAttribute('action'));
         alert('제보 완료! 금방 등록하겠습니다.');
       })
