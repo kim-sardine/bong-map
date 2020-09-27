@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby-link';
-import { Container } from 'components/common';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { Container } from 'components/common';
 import { Wrapper, ReportWrapper, ReportColumn, Fieldset } from './styles';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -39,6 +40,7 @@ const MyForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -48,6 +50,10 @@ const MyForm = () => {
       }),
     })
       .then(() => {
+        trackCustomEvent({
+          category: 'Report',
+          action: 'Submit',
+        });
         navigate(form.getAttribute('action'));
         alert('제보 완료! 금방 등록하겠습니다.');
       })
