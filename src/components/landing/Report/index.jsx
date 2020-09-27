@@ -56,7 +56,7 @@ const MyForm = () => {
     })
       .then(() => {
         navigate(form.getAttribute('action'));
-        alert('제보 완료! 금방 등록하겠습니다.');
+        alert('제보 완료! 금방 등록할게요.');
       })
       .catch(error => alert(error));
   };
