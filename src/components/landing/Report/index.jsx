@@ -104,7 +104,14 @@ const MyForm = () => {
         </Form.Label>
         <Col sm={9}>
           <InputGroup>
-            <Form.Control name="location" type="text" value={formValues.location} required onChange={handleChange} />
+            <Form.Control
+              name="location"
+              type="text"
+              value={formValues.location}
+              placeholder="36.14220, 126.11494"
+              required
+              onChange={handleChange}
+            />
             <InputGroup.Append>
               <Button variant="outline-dark" onClick={setCurrentPosition}>
                 <BiCurrentLocation />
