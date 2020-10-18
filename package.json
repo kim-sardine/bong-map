@@ -2,7 +2,7 @@
   "name": "bongmap",
   "private": true,
   "description": "Pull-up bar, parallel bar map that we all make together",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Kim sardine <kim.sardine@gmail.com>",
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,8 +17,8 @@
     "gatsby-plugin-manifest": "^2.2.6",
     "gatsby-plugin-offline": "^3.0.14",
     "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-plugin-sitemap": "^2.4.13",
     "gatsby-plugin-robots-txt": "^1.5.3",
+    "gatsby-plugin-sitemap": "^2.4.13",
     "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-source-graphql": "^2.1.21",
@@ -29,6 +29,7 @@
     "react-dom": "^16.11.0",
     "react-google-recaptcha": "^1.0.5",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.11.0",
     "styled-components": "^4.1.3",
     "yup": "^0.26.6"
   },

@@ -8,7 +8,7 @@ const Navbar = () => (
   <Wrapper as={Container}>
     <Brand as={Link} to="/">
       <Logo>
-        <img src="favicon/favicon-512.png" alt="asd" width="30px" />
+        <img src="favicon/favicon-512.png" alt="bongmap-logo" width="30px" />
       </Logo>
       봉맵
     </Brand>

@@ -5,7 +5,7 @@ import { Wrapper } from './styles';
 const NavbarLinks = ({ desktop }) => (
   <Wrapper desktop={desktop}>
     <AnchorLink href="#map">지도</AnchorLink>
-    <AnchorLink href="#report">제보</AnchorLink>
+    <AnchorLink href="#report">제보하기</AnchorLink>
     <a href="https://sidepun.ch" target="_blank" rel="noopener noreferrer">
       SidePunch
     </a>

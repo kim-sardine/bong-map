@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["log"] }] */
+
 import React, { useState } from 'react';
 import { navigate } from 'gatsby-link';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
@@ -5,6 +7,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { BiCurrentLocation } from 'react-icons/bi';
 import { Container } from 'components/common';
 import { Wrapper, ReportWrapper, ReportColumn, Fieldset } from './styles';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -29,12 +33,12 @@ export const Report = () => (
 );
 
 const MyForm = () => {
-  const [state, setState] = useState({
+  const [formValues, setFormValues] = useState({
     bong_type: 'pullup',
   });
 
   const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value });
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
@@ -51,14 +55,32 @@ const MyForm = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        ...state,
+        ...formValues,
       }),
     })
       .then(() => {
         navigate(form.getAttribute('action'));
-        alert('제보 완료! 금방 등록할게요.');
+        alert('제보 완료! 금방 반영하겠습니다.');
       })
       .catch(error => alert(error));
+  };
+
+  const setCurrentPosition = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          const lat = position.coords.latitude.toFixed(6);
+          const lng = position.coords.longitude.toFixed(6);
+
+          const currentPosition = `${lat}, ${lng}`;
+          setFormValues({ ...formValues, location: currentPosition });
+          console.log(formValues);
+        },
+        () => {
+          alert('위치 확인 권한 획득에 실패하여 좌표 정보를 읽어오지 못했습니다.');
+        }
+      );
+    }
   };
 
   return (
@@ -78,10 +100,17 @@ const MyForm = () => {
       </p>
       <Form.Group as={Row} controlId="formLocation">
         <Form.Label column sm={3}>
-          좌표
+          위치 좌표
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="location" type="text" placeholder="37.47452, 127.0384" required onChange={handleChange} />
+          <InputGroup>
+            <Form.Control name="location" type="text" value={formValues.location} required onChange={handleChange} />
+            <InputGroup.Append>
+              <Button variant="outline-dark" onClick={setCurrentPosition}>
+                <BiCurrentLocation />
+              </Button>
+            </InputGroup.Append>
+          </InputGroup>
         </Col>
       </Form.Group>
 
@@ -112,7 +141,7 @@ const MyForm = () => {
               name="bong_type"
               value="pullup"
               onChange={handleChange}
-              checked={state.bong_type === 'pullup'}
+              checked={formValues.bong_type === 'pullup'}
             />
             <Form.Check
               type="radio"
@@ -120,7 +149,7 @@ const MyForm = () => {
               name="bong_type"
               value="parallel"
               onChange={handleChange}
-              checked={state.bong_type === 'parallel'}
+              checked={formValues.bong_type === 'parallel'}
             />
           </Col>
         </Form.Group>
@@ -131,7 +160,13 @@ const MyForm = () => {
           개수, 높이
         </Form.Label>
         <Col sm={9}>
-          <Form.Control name="description" type="text" placeholder="3개 (180~200cm)" required onChange={handleChange} />
+          <Form.Control
+            name="description"
+            type="text"
+            placeholder="2개(210cm, 180cm)"
+            required
+            onChange={handleChange}
+          />
         </Col>
       </Form.Group>
 
