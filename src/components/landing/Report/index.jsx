@@ -96,7 +96,7 @@ const MyForm = () => {
       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
       <input type="hidden" name="form-name" value="report" />
       <p hidden>
-        Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+        <input name="bot-field" onChange={handleChange} />
       </p>
       <Form.Group as={Row} controlId="formLocation">
         <Form.Label column sm={3}>
