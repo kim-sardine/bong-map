@@ -9,10 +9,11 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: config.googleAnalyticsID,
+        trackingId: `G-WS19M0LYER`,
         head: true,
+        anonymize: true,
       },
     },
     'gatsby-plugin-react-helmet',
