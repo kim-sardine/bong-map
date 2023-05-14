@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { navigate } from 'gatsby-link';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -44,11 +43,6 @@ const MyForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-
-    trackCustomEvent({
-      category: 'User',
-      action: 'Submit Report',
-    });
 
     fetch('/', {
       method: 'POST',
