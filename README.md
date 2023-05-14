@@ -1,4 +1,4 @@
-# [Bongmap](http://bongmap.sidepun.ch/)
+# [Bongmap](http://bongmap.sidepunch.co/)
 
 다 함께 만드는 철봉, 평행봉 지도
 > Pull-up bar, parallel bar map that we all make together
